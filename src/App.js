@@ -14,6 +14,8 @@ import Alert from './components/Alert';
 import { Login } from './components/Login';
 import { Signup } from './components/Signup';
 import { useState } from 'react';
+import UserState from './context/user/UserState';
+import Userdetails from './components/Userdetails';
 
 
 function App() {
@@ -31,21 +33,24 @@ function App() {
 
   }
   return (
-    <NoteState>
-      <BrowserRouter>
-        <Navbar />
-        <Alert alert={alert} />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Home showAlert={showAlert} />} />
-            <Route path="/about" element={<About />} />
-            {/* <Route path="about/*" element={<About />} /> Relpacement of exact path */}
-            <Route path="/login" element={<Login showAlert={showAlert} />} />
-            <Route path="/signup" element={<Signup showAlert={showAlert} />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </NoteState>
+    <UserState>
+      <NoteState>
+        <BrowserRouter>
+          <Navbar showAlert={showAlert} />
+          <Alert alert={alert} />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home showAlert={showAlert} />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/userdetails" element={<Userdetails />} />
+              {/* <Route path="about/*" element={<About />} /> Relpacement of exact path */}
+              <Route path="/login" element={<Login showAlert={showAlert} />} />
+              <Route path="/signup" element={<Signup showAlert={showAlert} />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </NoteState>
+    </UserState>
   );
 }
 
