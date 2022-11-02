@@ -5,7 +5,7 @@ import noteContext from "./noteContext";
 
 
 const NoteState = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://mynotebookjs.herokuapp.com"
     const notesInitial = []
     const [notes, setnotes] = useState(notesInitial)
 

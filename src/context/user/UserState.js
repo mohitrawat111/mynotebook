@@ -4,7 +4,7 @@ import userContext from './userContext'
 
 
 const UserState = (props) => {
-    const host = "http://localhost:5000"
+    const host = "https://mynotebookjs.herokuapp.com"
     const userInitial = []
     const [user, setuser] = useState(userInitial)
 

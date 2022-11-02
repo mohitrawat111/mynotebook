@@ -8,7 +8,7 @@ export const Login = (props) => {
     const handleSubmit = async (e) => {
 
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch('https://mynotebookjs.herokuapp.com/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ export const Login = (props) => {
     }
     return (
         <div className="mt-2">
-            <h2 className="my-2">Login to continue to iNotebook</h2>
+            <h2 className="my-2">Login to continue to MyNotebook</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
